@@ -1,271 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jesse Little — Web Designer & Webflow Developer</title>
+  <title>Jesse Little — Web Designer & Front-end Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#2b2520',
+            umber:    '#8a7055',
+            sand:     '#c9b8a0',
+            linen:    '#e8e0d4',
+            cream:    '#f5f0ea',
+            sage:     '#4a6741',
+            ltxt:     '#6b5e51',
+          },
+          fontFamily: {
+            lora:    ['Lora', 'Georgia', 'serif'],
+            poppins: ['Poppins', 'Arial', 'sans-serif'],
+          },
+          fontSize: {
+            'hero':      ['clamp(52px, 6vw, 80px)', { lineHeight: '1.05' }],
+            'contact-h': ['clamp(42px, 5vw, 64px)', { lineHeight: '1.15' }],
+          },
+          screens: {
+            mobile: { max: '900px' },
+          },
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="bg-cream text-espresso font-poppins text-base font-normal leading-[1.7] overflow-x-hidden">
 
   <!-- NAV -->
-  <nav id="nav">
-    <div class="container nav-inner">
-    <a href="#" class="nav-logo">studiolittle</a>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-[100] py-7 bg-cream border-b border-transparent transition-[border-color,background-color] duration-300 mobile:py-6">
+    <div class="max-w-[1440px] mx-auto w-full px-12 flex items-center justify-between mobile:px-6">
+      <a href="#" class="font-poppins font-light text-[15px] tracking-[-0.022em] text-espresso no-underline">studiolittle</a>
+      <ul class="flex gap-10 list-none mobile:gap-6">
+        <li><a href="#experience" class="font-poppins font-light text-[11px] tracking-[0.18em] uppercase text-umber no-underline transition-colors duration-200 hover:text-espresso">Experience</a></li>
+        <li><a href="#work" class="font-poppins font-light text-[11px] tracking-[0.18em] uppercase text-umber no-underline transition-colors duration-200 hover:text-espresso">Work</a></li>
+        <li><a href="#skills" class="font-poppins font-light text-[11px] tracking-[0.18em] uppercase text-umber no-underline transition-colors duration-200 hover:text-espresso">Skills</a></li>
+        <li><a href="#contact" class="font-poppins font-light text-[11px] tracking-[0.18em] uppercase text-umber no-underline transition-colors duration-200 hover:text-espresso">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Web Designer &amp; Webflow Developer — Ottawa, Canada</p>
-      <h1 class="hero-name">Jesse<br><em>Little</em></h1>
-      <p class="hero-subtitle">Portfolio 2026</p>
-      <p class="hero-bio">I build websites for small business owners who are serious about growth. Clean design, clear hierarchy, and no wasted space. Based in Ottawa. Working with clients across Canada.</p>
-      <a href="#work" class="hero-cta">
+  <section class="min-h-screen grid grid-cols-2 pt-[100px] max-w-[1440px] mx-auto mobile:grid-cols-1 mobile:min-h-0" id="hero">
+    <div class="pt-20 pr-16 pb-20 pl-12 flex flex-col justify-center border-r border-linen mobile:pt-[60px] mobile:px-6 mobile:pb-10 mobile:border-r-0 mobile:border-b">
+      <p class="font-poppins font-light text-[11px] tracking-[0.20em] uppercase text-umber mb-9">Web Designer &amp; Front-end Developer — Ottawa, Canada</p>
+      <h1 class="font-lora font-normal text-hero text-espresso mb-2">Jesse<br><em class="italic text-umber">Little</em></h1>
+      <p class="font-poppins font-light text-[13px] tracking-[0.16em] uppercase text-sand mb-14 mt-4">Portfolio 2026</p>
+      <p class="font-poppins font-normal text-[17px] leading-[1.8] text-ltxt max-w-[460px] mb-12">I build websites for small business owners who are serious about growth. Clean design, clear hierarchy, and no wasted space. Based in Ottawa. Working with clients across Canada.</p>
+      <a href="#work" class="group inline-flex items-center gap-3 font-poppins font-medium text-[13px] tracking-[0.08em] text-espresso no-underline border-b border-sand pb-1 transition-[color,border-color] duration-200 hover:text-umber hover:border-umber w-fit">
         View selected work
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="transition-transform duration-200 group-hover:translate-x-1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
-    <div class="hero-right">
-      <p class="hero-right-label">At a glance</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-number">7+</div>
-          <div class="stat-label">Years experience</div>
+    <div class="pt-20 pl-16 pb-20 pr-12 flex flex-col justify-end relative mobile:pt-10 mobile:px-6 mobile:pb-[60px]">
+      <p class="font-poppins font-light text-[11px] tracking-[0.18em] uppercase text-sand mb-6">At a glance</p>
+      <div class="grid grid-cols-2 gap-px bg-linen border border-linen mb-12">
+        <div class="bg-cream py-8 px-7">
+          <div class="font-lora font-normal text-[42px] text-espresso leading-none mb-2">7+</div>
+          <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber">Years experience</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">20+</div>
-          <div class="stat-label">Projects delivered</div>
+        <div class="bg-cream py-8 px-7">
+          <div class="font-lora font-normal text-[42px] text-espresso leading-none mb-2">20+</div>
+          <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber">Projects delivered</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Industries served</div>
+        <div class="bg-cream py-8 px-7">
+          <div class="font-lora font-normal text-[42px] text-espresso leading-none mb-2">3</div>
+          <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber">Industries served</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Govt. agencies</div>
+        <div class="bg-cream py-8 px-7">
+          <div class="font-lora font-normal text-[42px] text-espresso leading-none mb-2">2</div>
+          <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber">Govt. agencies</div>
         </div>
       </div>
-      <div class="hero-tools">
-        <span class="tool-tag">Webflow</span>
-        <span class="tool-tag">Figma</span>
-        <span class="tool-tag">HTML / CSS</span>
-        <span class="tool-tag">JavaScript</span>
-        <span class="tool-tag">GSAP</span>
-        <span class="tool-tag">Tailwind</span>
-        <span class="tool-tag">Framer</span>
-        <span class="tool-tag">Shopify</span>
-        <span class="tool-tag">Photoshop</span>
-        <span class="tool-tag">Illustrator</span>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Webflow</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Figma</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">HTML / CSS</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">JavaScript</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">GSAP</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Tailwind</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Framer</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Shopify</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Photoshop</span>
+        <span class="font-poppins font-light text-[11px] tracking-[0.12em] uppercase text-umber border border-linen px-[14px] py-[6px] transition-[background-color,border-color] duration-200 hover:bg-linen hover:border-sand cursor-default">Illustrator</span>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-    <p class="section-label">Professional experience</p>
-    <div class="exp-grid">
-      <div>
-        <h2 class="exp-intro-heading">Built across <em>studios, agencies</em> and government</h2>
-        <p class="exp-intro-body">From graphic design in the trades to UI/UX at federal agencies and running my own studio — each role has sharpened a different part of how I work.</p>
+  <section id="experience" class="bg-espresso py-[120px] mobile:py-20">
+    <div class="max-w-[1440px] mx-auto w-full px-12 mobile:px-6">
+      <p class="font-poppins font-light text-[10px] tracking-[0.20em] uppercase text-sand mb-16 flex items-center gap-5 after:content-[''] after:block after:h-px after:w-[60px] after:bg-umber">Professional experience</p>
+      <div class="grid grid-cols-[320px_1fr] gap-20 mobile:grid-cols-1 mobile:gap-12">
+        <div>
+          <h2 class="font-lora font-normal text-[42px] text-cream leading-[1.2] mb-6">Built across <em class="italic text-sand">studios, agencies</em> and government</h2>
+          <p class="font-poppins font-normal text-[16px] text-sand leading-[1.8]">From graphic design in the trades to UI/UX at federal agencies and running my own studio — each role has sharpened a different part of how I work.</p>
+        </div>
+        <div class="flex flex-col">
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">Nov 2025 — Present</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">Communications Officer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">Department of National Defence</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Manage and organise digital web and intranet content for Defence Research and Development Canada. Improve structure, usability, and accessibility of internal platforms.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">Jan 2025 — Oct 2025</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">UI/UX Designer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">Financial Consumer Agency of Canada</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Developed a Figma design system supporting consistent UI across digital products. Translated design components into scalable front-end implementations with development teams.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">Feb 2024 — Oct 2024</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">Web Designer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">Grant Burke Design</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Designed and maintained responsive websites with a focus on performance, usability, and visual clarity. Delivered user-friendly experiences in close collaboration with developers and stakeholders.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">2022 — 2023</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">UI/UX Designer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">Invert Inc.</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Designed a mobile app for carbon offsetting — from user research through high-fidelity prototype. Focused on clarity, trust, and reducing friction at every decision point.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">2019 — Present</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">Web Designer / Front-end Developer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">studiolittle (Freelance)</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Boutique web and graphic design studio for small businesses. End-to-end projects covering strategy, visual design, and Webflow development.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item grid grid-cols-[140px_1fr] gap-8 py-10 border-t border-sand/20 last:border-b last:border-sand/20">
+            <div class="font-poppins font-light text-[11px] tracking-[0.14em] uppercase text-umber pt-1">2015 — 2019</div>
+            <div>
+              <div class="font-poppins font-medium text-[16px] text-cream mb-1">Graphic Designer</div>
+              <div class="font-lora italic text-[15px] text-sand mb-4">Level Six</div>
+              <div class="font-poppins font-normal text-[15px] text-sand/75 leading-[1.75]">Four years building a design foundation across branding, print, and digital. Where the craft started.</div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-date">Nov 2025 — Present</div>
-          <div>
-            <div class="timeline-role">Communications Officer</div>
-            <div class="timeline-org">Department of National Defence</div>
-            <div class="timeline-desc">Manage and organise digital web and intranet content for Defence Research and Development Canada. Improve structure, usability, and accessibility of internal platforms.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">Jan 2025 — Oct 2025</div>
-          <div>
-            <div class="timeline-role">UI/UX Designer</div>
-            <div class="timeline-org">Financial Consumer Agency of Canada</div>
-            <div class="timeline-desc">Developed a Figma design system supporting consistent UI across digital products. Translated design components into scalable front-end implementations with development teams.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">Feb 2024 — Oct 2024</div>
-          <div>
-            <div class="timeline-role">Web Designer</div>
-            <div class="timeline-org">Grant Burke Design</div>
-            <div class="timeline-desc">Designed and maintained responsive websites with a focus on performance, usability, and visual clarity. Delivered user-friendly experiences in close collaboration with developers and stakeholders.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2022 — 2023</div>
-          <div>
-            <div class="timeline-role">UI/UX Designer</div>
-            <div class="timeline-org">Invert Inc.</div>
-            <div class="timeline-desc">Designed a mobile app for carbon offsetting — from user research through high-fidelity prototype. Focused on clarity, trust, and reducing friction at every decision point.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2019 — Present</div>
-          <div>
-            <div class="timeline-role">Web Designer / Webflow Developer</div>
-            <div class="timeline-org">studiolittle (Freelance)</div>
-            <div class="timeline-desc">Boutique web and graphic design studio for small businesses. End-to-end projects covering strategy, visual design, and Webflow development.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2015 — 2019</div>
-          <div>
-            <div class="timeline-role">Graphic Designer</div>
-            <div class="timeline-org">Level Six</div>
-            <div class="timeline-desc">Four years building a design foundation across branding, print, and digital. Where the craft started.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
     </div>
   </section>
 
   <!-- WORK -->
-  <section id="work">
-    <div class="container">
-    <div class="work-header">
-      <h2 class="work-heading">Selected<br><em>work</em></h2>
-    </div>
-
-    <div class="case-grid">
-
-      <!-- GRIFFITH BROS -->
-      <a class="case-card" href="https://www.studiolittle.ca/case-study/griffith-bros" target="_blank" rel="noopener">
-        <div class="case-card-number">01</div>
-        <p class="case-card-label">Web design &amp; Webflow development</p>
-        <h3 class="case-card-title">Griffith Bros. Service Centre</h3>
-        <p class="case-card-desc">Redesigned a family-owned auto repair shop's website from a confusing tire e-commerce template into a clean, trustworthy site that reflects 60 years of local history. Designed in Figma, built in Webflow.</p>
-        <div class="case-card-tags">
-          <span class="case-tag">Figma</span>
-          <span class="case-tag">Webflow</span>
-          <span class="case-tag">UX Research</span>
-        </div>
-        <div class="case-card-arrow">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </a>
-
-      <!-- INVERT -->
-      <a class="case-card" href="https://www.studiolittle.ca/case-study/invert" target="_blank" rel="noopener">
-        <div class="case-card-number">02</div>
-        <p class="case-card-label">Product design &amp; UI/UX</p>
-        <h3 class="case-card-title">Invert — Carbon Offset App</h3>
-        <p class="case-card-desc">Designed a mobile app to make carbon offsetting accessible and trustworthy. Started with user interviews, moved through wireframes and a complete high-fidelity prototype. Simplified a complex topic into a guided, calm experience.</p>
-        <div class="case-card-tags">
-          <span class="case-tag">Product Design</span>
-          <span class="case-tag">User Research</span>
-          <span class="case-tag">Prototyping</span>
-        </div>
-        <div class="case-card-arrow">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </a>
-
-      <!-- FCAC - wide -->
-      <div class="case-card wide">
-        <div>
-          <div class="case-card-number">03</div>
-          <p class="case-card-label">Design systems &amp; UI/UX</p>
-          <h3 class="case-card-title">Financial Consumer Agency of Canada — Design System</h3>
-          <p class="case-card-desc">Built a Figma component library to standardise UI across federal digital products. Worked directly with developers to bridge design and code, ensuring components translated cleanly into front-end implementations at scale.</p>
-        </div>
-        <div class="case-card-right">
-          <div class="case-card-tags" style="margin-bottom: 24px;">
-            <span class="case-tag">Figma</span>
-            <span class="case-tag">Design Systems</span>
-            <span class="case-tag">Front-end</span>
-            <span class="case-tag">Accessibility</span>
-          </div>
-          <p style="font-family: var(--poppins); font-size: 14px; color: var(--ltxt); line-height: 1.8;">Federal digital products require a level of rigour that most client work does not. Every component had to meet accessibility standards, scale across multiple product teams, and remain maintainable long after handoff.</p>
-        </div>
+  <section id="work" class="bg-cream pt-[120px] pb-20 mobile:py-20">
+    <div class="max-w-[1440px] mx-auto w-full px-12 mobile:px-6">
+      <div class="flex justify-between items-end mb-16 mobile:flex-col mobile:items-start mobile:gap-6">
+        <h2 class="font-lora font-normal text-[48px] text-espresso leading-[1.1]">Selected<br><em class="italic text-umber">work</em></h2>
       </div>
+      <div class="grid grid-cols-2 gap-0.5 bg-linen mobile:grid-cols-1">
 
-    </div>
+        <!-- GRIFFITH BROS -->
+        <a class="group bg-cream p-12 relative overflow-hidden no-underline block transition-colors duration-300 hover:bg-linen" href="https://www.studiolittle.ca/case-study/griffith-bros" target="_blank" rel="noopener">
+          <div class="font-lora font-normal text-[72px] text-linen leading-none -mb-4 transition-colors duration-300 group-hover:text-sand">01</div>
+          <p class="font-poppins font-light text-[10px] tracking-[0.18em] uppercase text-umber mb-5">Web design &amp; Webflow development</p>
+          <h3 class="font-lora font-normal text-[24px] text-espresso leading-[1.3] mb-4">Griffith Bros. Service Centre</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75] mb-7">Redesigned a family-owned auto repair shop's website from a confusing tire e-commerce template into a clean, trustworthy site that reflects 60 years of local history. Designed in Figma, built in Webflow.</p>
+          <div class="flex flex-wrap gap-[6px]">
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Figma</span>
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Webflow</span>
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">UX Research</span>
+          </div>
+          <div class="absolute bottom-12 right-12 w-9 h-9 border border-sand flex items-center justify-center text-umber transition-[background-color,border-color,color] duration-200 group-hover:bg-espresso group-hover:border-espresso group-hover:text-cream">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- INVERT -->
+        <a class="group bg-cream p-12 relative overflow-hidden no-underline block transition-colors duration-300 hover:bg-linen" href="https://www.studiolittle.ca/case-study/invert" target="_blank" rel="noopener">
+          <div class="font-lora font-normal text-[72px] text-linen leading-none -mb-4 transition-colors duration-300 group-hover:text-sand">02</div>
+          <p class="font-poppins font-light text-[10px] tracking-[0.18em] uppercase text-umber mb-5">Product design &amp; UI/UX</p>
+          <h3 class="font-lora font-normal text-[24px] text-espresso leading-[1.3] mb-4">Invert — Carbon Offset App</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75] mb-7">Designed a mobile app to make carbon offsetting accessible and trustworthy. Started with user interviews, moved through wireframes and a complete high-fidelity prototype. Simplified a complex topic into a guided, calm experience.</p>
+          <div class="flex flex-wrap gap-[6px]">
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Product Design</span>
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">User Research</span>
+            <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Prototyping</span>
+          </div>
+          <div class="absolute bottom-12 right-12 w-9 h-9 border border-sand flex items-center justify-center text-umber transition-[background-color,border-color,color] duration-200 group-hover:bg-espresso group-hover:border-espresso group-hover:text-cream">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- FCAC - wide -->
+        <div class="col-span-full bg-cream p-12 grid grid-cols-2 gap-16 items-start mobile:grid-cols-1 mobile:gap-0">
+          <div>
+            <div class="font-lora font-normal text-[72px] text-linen leading-none -mb-4">03</div>
+            <p class="font-poppins font-light text-[10px] tracking-[0.18em] uppercase text-umber mb-5">Design systems &amp; UI/UX</p>
+            <h3 class="font-lora font-normal text-[24px] text-espresso leading-[1.3] mb-4">Financial Consumer Agency of Canada — Design System</h3>
+            <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75] mb-7">Built a Figma component library to standardise UI across federal digital products. Worked directly with developers to bridge design and code, ensuring components translated cleanly into front-end implementations at scale.</p>
+          </div>
+          <div class="pt-[60px] mobile:pt-0">
+            <div class="flex flex-wrap gap-[6px] mb-6">
+              <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Figma</span>
+              <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Design Systems</span>
+              <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Front-end</span>
+              <span class="font-poppins font-light text-[10px] tracking-[0.12em] uppercase text-umber border border-sand py-1 px-[10px]">Accessibility</span>
+            </div>
+            <p class="font-poppins text-[14px] text-ltxt leading-[1.8]">Federal digital products require a level of rigour that most client work does not. Every component had to meet accessibility standards, scale across multiple product teams, and remain maintainable long after handoff.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-    <p class="section-label reveal">Core capabilities</p>
-    <div class="skills-grid">
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">Web</div>
-        <h3 class="skill-block-title">Webflow Development</h3>
-        <p class="skill-block-body">Production-ready builds with clean code, CMS architecture, and custom interactions. I design and build — no handoff gaps.</p>
+  <section id="skills" class="bg-linen py-[120px] mobile:py-20">
+    <div class="max-w-[1440px] mx-auto w-full px-12 mobile:px-6">
+      <p class="reveal font-poppins font-light text-[10px] tracking-[0.20em] uppercase text-umber mb-16 flex items-center gap-5 after:content-[''] after:block after:h-px after:w-[60px] after:bg-sand">Core capabilities</p>
+      <div class="grid grid-cols-3 gap-0.5 bg-sand mobile:grid-cols-1">
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">Web</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Webflow Development</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">Production-ready builds with clean code, CMS architecture, and custom interactions. I design and build — no handoff gaps.</p>
+        </div>
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">UX</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Product &amp; UI Design</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">From research to prototype. I've led design processes at federal agencies and small startups — the scale changes, the rigour does not.</p>
+        </div>
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">Dev</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Front-End Development</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">HTML, CSS, JavaScript, GSAP, and Tailwind. Enough code knowledge to build custom solutions and communicate clearly with developers.</p>
+        </div>
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">Sys</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Design Systems</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">Component libraries, token-based design, and cross-team consistency. Built a Figma system for FCAC that development teams actually used.</p>
+        </div>
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">Vis</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Visual &amp; Graphic Design</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">Four years in graphic design before moving to the web. I approach every project with a designer's eye — hierarchy, space, and restraint.</p>
+        </div>
+        <div class="reveal bg-linen py-12 px-10">
+          <div class="font-lora italic text-[32px] text-umber mb-5">Gov</div>
+          <h3 class="font-poppins font-medium text-[16px] text-espresso mb-3">Government Digital Standards</h3>
+          <p class="font-poppins font-normal text-[15px] text-ltxt leading-[1.75]">Experience building for federal accessibility and content standards. Canada.ca guidelines, WCAG compliance, and plain language communication.</p>
+        </div>
       </div>
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">UX</div>
-        <h3 class="skill-block-title">Product &amp; UI Design</h3>
-        <p class="skill-block-body">From research to prototype. I've led design processes at federal agencies and small startups — the scale changes, the rigour does not.</p>
-      </div>
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">Dev</div>
-        <h3 class="skill-block-title">Front-End Development</h3>
-        <p class="skill-block-body">HTML, CSS, JavaScript, GSAP, and Tailwind. Enough code knowledge to build custom solutions and communicate clearly with developers.</p>
-      </div>
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">Sys</div>
-        <h3 class="skill-block-title">Design Systems</h3>
-        <p class="skill-block-body">Component libraries, token-based design, and cross-team consistency. Built a Figma system for FCAC that development teams actually used.</p>
-      </div>
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">Vis</div>
-        <h3 class="skill-block-title">Visual &amp; Graphic Design</h3>
-        <p class="skill-block-body">Four years in graphic design before moving to the web. I approach every project with a designer's eye — hierarchy, space, and restraint.</p>
-      </div>
-      <div class="skill-block reveal">
-        <div class="skill-block-icon">Gov</div>
-        <h3 class="skill-block-title">Government Digital Standards</h3>
-        <p class="skill-block-body">Experience building for federal accessibility and content standards. Canada.ca guidelines, WCAG compliance, and plain language communication.</p>
-      </div>
-    </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-    <p class="contact-eyebrow">Get in touch</p>
-    <h2 class="contact-heading">Your site should close <em>clients</em>. Let's make sure it does.</h2>
-    <p class="contact-sub">Available for web design and Webflow projects. Ottawa-based, working with clients across Canada.</p>
-    <div class="contact-links">
-      <a href="mailto:jesse@studiolittle.ca" class="contact-link">jesse@studiolittle.ca</a>
-      <a href="https://www.studiolittle.ca" class="contact-link" target="_blank" rel="noopener">studiolittle.ca</a>
-      <a href="https://www.linkedin.com/in/littlejesse/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
+  <section id="contact" class="bg-espresso text-center py-40 mobile:py-20">
+    <div class="max-w-[1440px] mx-auto w-full px-12 mobile:px-6">
+      <p class="font-poppins font-light text-[10px] tracking-[0.22em] uppercase text-umber mb-10">Get in touch</p>
+      <h2 class="font-lora font-normal text-contact-h text-cream max-w-[640px] mx-auto mb-6">Your site should close <em class="italic text-sand">clients</em>. Let's make sure it does.</h2>
+      <p class="font-poppins font-normal text-[16px] text-sand mb-16">Available for web design and Webflow projects. Ottawa-based, working with clients across Canada.</p>
+      <div class="flex justify-center gap-10 flex-wrap">
+        <a href="mailto:jesse@studiolittle.ca" class="font-poppins font-light text-[13px] tracking-[0.14em] uppercase text-cream no-underline border-b border-umber pb-1 transition-[color,border-color] duration-200 hover:text-sand hover:border-sand">jesse@studiolittle.ca</a>
+        <a href="https://www.studiolittle.ca" class="font-poppins font-light text-[13px] tracking-[0.14em] uppercase text-cream no-underline border-b border-umber pb-1 transition-[color,border-color] duration-200 hover:text-sand hover:border-sand" target="_blank" rel="noopener">studiolittle.ca</a>
+        <a href="https://www.linkedin.com/in/littlejesse/" class="font-poppins font-light text-[13px] tracking-[0.14em] uppercase text-cream no-underline border-b border-umber pb-1 transition-[color,border-color] duration-200 hover:text-sand hover:border-sand" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-    <span class="footer-logo">studiolittle</span>
-    <span class="footer-copy">© 2026 Jesse Little</span>
+  <footer class="bg-espresso border-t border-sand/[.15] py-8">
+    <div class="max-w-[1440px] mx-auto w-full px-12 flex justify-between items-center mobile:px-6 mobile:flex-col mobile:gap-3 mobile:text-center">
+      <span class="font-poppins font-light text-[14px] tracking-[-0.022em] text-sand">studiolittle</span>
+      <span class="font-poppins font-light text-[11px] tracking-[0.08em] text-umber">© 2026 Jesse Little</span>
     </div>
   </footer>
 
